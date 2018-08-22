@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+	<title>Blue Shadow</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" href="./css/frame.css">
+	<script src="./js/frame.js"></script>
+</head>
+<body>
+	<div id="header">
+		<a href="index.html">Blue Shadow Blog</a>
+	</div>
+
+	<div id="grid">
+		<div id="navbar">
+			<div class="menuLink">
+				<div class="menuEffect"></div>
+				<a id="profile" onclick="toNextContents(0);"> Profile </a>
+			</div>
+			<div class="menuLink">
+				<div class="menuEffect"></div>
+				<a id="resume" onclick="toNextContents(1);"> Resume </a>
+			</div>
+			<div class="menuLink">
+				<div class="menuEffect"></div>
+				<a id="project" onclick="toNextContents(2);"> Project </a>
+			</div>
+			<div class="menuLink">
+				<div class="menuEffect"></div>
+				<!--<a id="blog" onclick="toBlog();"> Blog </a>-->
+				<a href="http://blue-shadow.tistory.com" target="_blank"> Blog </a>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			var navbarList = ['#profile', '#resume', '#project'];
+
+			function showContents(fileName){
+				$(function(){
+					$("#contents").load(fileName);
+				});
+			}
+			showContents("profile.html");
+
+			function toNextContents(n){
+				for(var i=0; i<n; i++){
+					$(navbarList[i]).css('color', '#34495e');
+					$(navbarList[i]).css('background-color', '#ffffff00');
+				}
+
+				$(navbarList[n]).css('color', '#fff');
+				$(navbarList[n]).css('background', '#34495e');
+
+				for(var i=n+1; i<navbarList.length; i++){
+					$(navbarList[i]).css('color', '#34495e');
+					$(navbarList[i]).css('background-color', '#ffffff00');
+				}
+				showContents(navbarList[n].split('#')[1]+".html");
+			}
+
+			function toBlog(){
+				$("#contents").load("test.html");
+			}
+		</script>
+
+		<div id="contents"></div>
+	</div>
+</body>
+</html>

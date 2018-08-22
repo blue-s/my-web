@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light');
+@import url('https://fonts.googleapis.com/css?family=Nanum+Pen+Script');
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic');
+
+body{
+	font-family:arial;
+	margin:0;
+}
+
+a {
+	text-decoration: none;
+	display: block;
+}
+
+#header {
+	border-bottom:1px solid gray;
+	margin:0;
+	padding:20px;
+	text-align: center;
+	font-size:45px;
+	font-family: 'Shadows Into Light', cursive;
+	letter-spacing: 5px;
+	background-image: url('../src/Wings2.jpg');
+	background-position: center;
+	background-size: cover;
+}
+
+#header a {
+	color: #FFFFFFE0;
+}
+
+#grid{
+	display: grid;
+	grid-template-columns: 170px 1fr;
+}
+
+#navbar{
+	width:130px;
+	margin:0;
+	padding: 15px;
+	padding-top: 30px;
+	list-style: none;
+	background-color: #34495e20;
+}
+
+.menuLink{
+	width:120px;
+	height:40px;
+	border:2px solid #34495e;
+	margin: auto;
+	text-align:center;
+	cursor:pointer;
+	position:relative;
+	box-sizing:border-box;
+	overflow:hidden;
+	margin:0 0 40px 0;
+}
+.menuLink a{
+	font-size:15px;
+	color:#34495e;
+	text-decoration:none;
+	line-height:35px;
+	transition:all .5s ease;
+	z-index:2;
+	position:relative;
+}
+.menuEffect{
+	width:120px;
+	height:40px;
+	top:-2px;
+	right:-120px;
+	background:#34495e;
+	position:absolute;
+	transition:all .5s ease;
+	z-index:1;
+}
+.menuLink:hover .menuEffect{
+	right:0;
+}
+.menuLink:hover a{
+	color:#fff;
+}
+
+#contents{
+	padding-top: 30px;
+	padding-left:40px;
+	padding-right:40px;
+}
+
+@media(max-width:500px){
+	#grid{
+		display: block;
+	}
+
+	#navbar {
+		background-color: #ffffffff;
+	}
+
+	#navbar{
+		padding-left:20px;
+		width: 100%;
+		text-align: center;
+	}
+
+	#navbar .menuLink {
+		margin-right: 20px;
+		margin-bottom: 10px;
+		display: inline-block;
+	}
+
+	#contents{
+		padding-top: 0;
+	}
+}
